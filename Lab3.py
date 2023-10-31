@@ -12,10 +12,19 @@ def bubble_sort(arr, sorting_order):
     # Get number of elements in the list
     n = len(arr_result)
 
+    if n == 0:
+        # If 0 numbers are entered, return 0 or any other suitable value
+        return 0
+    if n >= 10:
+        return 1
+
+    if not all(isinstance(num, int) for num in arr):
+        return 2
+
     if n < 10:
         # Traverse through all array elements
         for i in range(n - 1):
-            # range(n) also work but outer loop will
+            # range(n) also works but the outer loop will
             # repeat one time more than needed.
 
             # Last i elements are already in place
@@ -40,19 +49,23 @@ def bubble_sort(arr, sorting_order):
 
 def main():
     # Driver code to test above
+
+    # Test with an empty array
+    empty_array = []
+    result_empty = bubble_sort(empty_array, SORT_ASCENDING)
+    print("Sorted empty array in ascending order:", result_empty)
+
     arr = [64, 34, 25, 12, 22, 11, 90]
 
     # Sort in ascending order
-    result = bubble_sort(arr, SORT_ASCENDING)
+    result_asc = bubble_sort(arr, SORT_ASCENDING)
     print("\nSorted array in ascending order: ")
-    print(result)
+    print(result_asc)
 
     # Sort in descending order
-    print("Sorted array in ascending order: ")
-    result = bubble_sort(arr, SORT_DESCENDING)
-    print(result)
+    print("Sorted array in descending order: ")
+    result_desc = bubble_sort(arr, SORT_DESCENDING)
+    print(result_desc)
 
 if __name__ == "__main__":
     main()
-
-
