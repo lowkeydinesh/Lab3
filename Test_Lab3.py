@@ -25,14 +25,10 @@ def test_empty_array():
 
 def test_large_array():
     input_arr = [64, 34, 25, 12, 22, 11, 90, 43, 56, 78, 9, 8, 7, 6, 5]
-
     result = Lab3.bubble_sort(input_arr, Lab3.SORT_ASCENDING)
-
     assert (result == 1)
 
 def test_non_integer_values():
     input_arr = [64, "abc", 25, 12, 22, 11, 90]
-
     result = Lab3.bubble_sort(input_arr, Lab3.SORT_ASCENDING)
-
     assert (result == 2)
