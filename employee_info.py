@@ -19,13 +19,16 @@ def get_employees_by_age_range(age_lower_limit, age_upper_limit):
     return result
 
 def calculate_average_salary():
-    total = 0
-    average = 0
+    total_salary = 0
 
-    #add your implementation to calculate here
+    for item in employee_data:
+        total_salary += item["salary"]
 
-
-    return average
+    if len(employee_data) > 0:
+        average_salary = total_salary / len(employee_data)
+        return average_salary
+    else:
+        return 0  # Return 0 if there are no employees2
 
 def get_employees_by_dept(department):
     result = []
