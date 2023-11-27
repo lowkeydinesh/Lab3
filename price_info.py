@@ -23,10 +23,14 @@ def cost_of_fruits(fruit, quantity):
 
     print("Cost of {} {} = ${:.2f}".format(quantity, fruit, cost))
 
+    return cost
+
 
 def main():
     cost_of_fruits('apple', 10)
     total_cost_shopping()
+
+
 
 
 if __name__ == "__main__":
